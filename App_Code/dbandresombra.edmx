@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbcadastroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="PRODUTO">
+          <Key>
+            <PropertyRef Name="PRO_ID" />
+          </Key>
+          <Property Name="PRO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRO_NOME" Type="varchar" MaxLength="100" />
+          <Property Name="PRO_VRVENDA" Type="money" />
+          <Property Name="PRO_VRCUSTO" Type="money" />
+          <Property Name="PRO_UNID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbcadastroModelStoreContainer">
+          <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" Schema="dbcad" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbcadastroModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="PRODUTO">
+          <Key>
+            <PropertyRef Name="PRO_ID" />
+          </Key>
+          <Property Name="PRO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PRO_NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PRO_VRVENDA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PRO_VRCUSTO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PRO_UNID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbcadastroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PRODUTOs" EntityType="Self.PRODUTO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbcadastroModelStoreContainer" CdmEntityContainer="dbcadastroEntities">
+          <EntitySetMapping Name="PRODUTOs">
+            <EntityTypeMapping TypeName="dbcadastroModel.PRODUTO">
+              <MappingFragment StoreEntitySet="PRODUTO">
+                <ScalarProperty Name="PRO_ID" ColumnName="PRO_ID" />
+                <ScalarProperty Name="PRO_NOME" ColumnName="PRO_NOME" />
+                <ScalarProperty Name="PRO_VRVENDA" ColumnName="PRO_VRVENDA" />
+                <ScalarProperty Name="PRO_VRCUSTO" ColumnName="PRO_VRCUSTO" />
+                <ScalarProperty Name="PRO_UNID" ColumnName="PRO_UNID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
